@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "schedule": [
+    "after 4am every Saturday"
+  ],
+  "timezone": "Europe/Berlin",
+  "automerge": false,
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "All non-major dependencies",
+      "labels": ["Dependencies upgrade", "dependencies"]
+    }
+  ]
+}
