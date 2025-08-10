@@ -65,9 +65,8 @@ val openApiSpec = layout.projectDirectory.file("src/main/openapi/brevo_v3.yml")
 val generateOpenApiServer by tasks.registering(GenerateTask::class) {
     group = "openapi"
     description = "Generates Kotlin Spring server stubs from OpenAPI spec"
-    inputSpec.set(openApiSpec.asFile.path)
+    inputSpec.set(openApiSpec.asFile.absolutePath)
     generatorName.set("kotlin-spring")
-    library.set("spring-boot")
     outputDir.set(openApiOutputDir.map { it.asFile.absolutePath })
     apiPackage.set("eu.rrrekin.brevomock.openapi.api")
     modelPackage.set("eu.rrrekin.brevomock.openapi.model")
@@ -97,11 +96,7 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
     )
     doFirst {
         // Remove stale files so deletions in the spec are reflected in sources
-        project.delete(
-            layout.projectDirectory.dir(
-                openApiOutputDir.map { it.dir("src/main/kotlin") }.get().asFile.path
-            )
-        )
+        project.delete(openApiOutputDir.get().dir("src/main/kotlin"))
     }
 
 }
