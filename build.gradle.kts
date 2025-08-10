@@ -95,6 +95,15 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
             "modelTests" to "false"
         )
     )
+    doFirst {
+        // Remove stale files so deletions in the spec are reflected in sources
+        project.delete(
+            layout.projectDirectory.dir(
+                openApiOutputDir.map { it.dir("src/main/kotlin") }.get().asFile.path
+            )
+        )
+    }
+
 }
 
 
