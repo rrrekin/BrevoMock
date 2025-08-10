@@ -68,7 +68,7 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
     inputSpec.set(openApiSpec.asFile.path)
     generatorName.set("kotlin-spring")
     library.set("spring-boot")
-    outputDir.set(openApiOutputDir.get().asFile.path)
+    outputDir.set(openApiOutputDir.map { it.asFile.absolutePath })
     apiPackage.set("eu.rrrekin.brevomock.openapi.api")
     modelPackage.set("eu.rrrekin.brevomock.openapi.model")
     configOptions.set(
@@ -84,11 +84,15 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
     // Additional generator properties
     additionalProperties.set(
         mapOf(
-            "hideGenerationTimestamp" to true,
-            "apiDocs" to false,
-            "modelDocs" to false,
-            "apiTests" to false,
-            "modelTests" to false
+            "hideGenerationTimestamp" to true
+        )
+    )
+    globalProperties.set(
+        mapOf(
+            "apiDocs" to "false",
+            "modelDocs" to "false",
+            "apiTests" to "false",
+            "modelTests" to "false"
         )
     )
 }
