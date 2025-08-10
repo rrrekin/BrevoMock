@@ -77,13 +77,18 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
             "useTags" to "true",
             "useSpringBoot3" to "true",
             "dateLibrary" to "java8",
-            "useSwaggerAnnotations" to "true"
+            "useSwaggerAnnotations" to "true",
+            "sourceFolder" to "src/main/kotlin"
         )
     )
     // Additional generator properties
     additionalProperties.set(
         mapOf(
-            "hideGenerationTimestamp" to true
+            "hideGenerationTimestamp" to true,
+            "apiDocs" to false,
+            "modelDocs" to false,
+            "apiTests" to false,
+            "modelTests" to false
         )
     )
 }
