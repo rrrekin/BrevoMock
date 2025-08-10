@@ -68,6 +68,7 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
     inputSpec.set(openApiSpec.asFile.absolutePath)
     generatorName.set("kotlin-spring")
     outputDir.set(openApiOutputDir.map { it.asFile.absolutePath })
+    validateSpec.set(true)
     apiPackage.set("eu.rrrekin.brevomock.openapi.api")
     modelPackage.set("eu.rrrekin.brevomock.openapi.model")
     configOptions.set(
@@ -94,6 +95,35 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
             "modelTests" to "false"
         )
     )
+    typeMappings.set(
+        mapOf(
+            "integer" to "kotlin.Int",
+            "int32" to "kotlin.Int",
+            "int64" to "kotlin.Long",
+            "long" to "kotlin.Long",
+            "float" to "kotlin.Float",
+            "double" to "kotlin.Double",
+            "float64" to "kotlin.Double",
+            "number+float64" to "kotlin.Double",
+            "number+integer" to "kotlin.Int",
+            "number+int64" to "kotlin.Long",
+        )
+    )
+    languageSpecificPrimitives.set(
+        setOf(
+            "kotlin.Int",
+            "kotlin.Long",
+            "kotlin.Float",
+            "kotlin.Double",
+            "java.math.BigDecimal"
+        )
+    )
+    importMappings.set(
+        mapOf(
+            "java.math.BigDecimal" to "java.math.BigDecimal"
+        )
+    )
+
     doFirst {
         // Remove stale files so deletions in the spec are reflected in sources
         project.delete(openApiOutputDir.get().dir("src/main/kotlin"))
