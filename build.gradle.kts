@@ -109,20 +109,6 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
             "number+int64" to "kotlin.Long",
         )
     )
-    languageSpecificPrimitives.set(
-        setOf(
-            "kotlin.Int",
-            "kotlin.Long",
-            "kotlin.Float",
-            "kotlin.Double",
-            "java.math.BigDecimal"
-        )
-    )
-    importMappings.set(
-        mapOf(
-            "java.math.BigDecimal" to "java.math.BigDecimal"
-        )
-    )
 
     doFirst {
         // Remove stale files so deletions in the spec are reflected in sources
