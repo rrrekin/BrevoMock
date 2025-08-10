@@ -71,13 +71,13 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
     outputDir.set(openApiOutputDir.get().asFile.path)
     apiPackage.set("eu.rrrekin.brevomock.openapi.api")
     modelPackage.set("eu.rrrekin.brevomock.openapi.model")
-    invokerPackage.set("eu.rrrekin.brevomock.openapi.invoker")
     configOptions.set(
         mapOf(
             "interfaceOnly" to "true",
             "useTags" to "true",
             "useSpringBoot3" to "true",
-            "dateLibrary" to "java8"
+            "dateLibrary" to "java8",
+            "useSwaggerAnnotations" to "true"
         )
     )
     // Additional generator properties
