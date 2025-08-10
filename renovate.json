@@ -1,0 +1,11 @@
+{
+  "extends": ["config:base"],
+  "schedule": ["after 4am every Saturday"],
+  "group": {
+    "allNonMajor": {
+      "groupName": "All non-major dependencies",
+      "matchUpdateTypes": ["minor", "patch"]
+    }
+  },
+  "automerge": false
+}
