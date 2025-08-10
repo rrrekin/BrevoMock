@@ -6,6 +6,7 @@
     "after 4am every Saturday"
   ],
   "timezone": "Europe/Berlin",
+  "automerge": false,
   "packageRules": [
     {
       "matchUpdateTypes": [
@@ -13,7 +14,7 @@
         "patch"
       ],
       "groupName": "All non-major dependencies",
-      "labels": ["Dependencies upgrade"]
+      "labels": ["Dependencies upgrade", "dependencies"]
     }
   ]
 }
