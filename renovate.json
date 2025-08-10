@@ -12,7 +12,8 @@
         "minor",
         "patch"
       ],
-      "groupName": "All non-major dependencies"
+      "groupName": "All non-major dependencies",
+      "labels": ["Dependencies upgrade"]
     }
   ]
 }
