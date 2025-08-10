@@ -97,13 +97,6 @@ val generateOpenApiServer by tasks.registering(GenerateTask::class) {
     )
     typeMappings.set(
         mapOf(
-            "integer" to "kotlin.Int",
-            "int32" to "kotlin.Int",
-            "int64" to "kotlin.Long",
-            "long" to "kotlin.Long",
-            "float" to "kotlin.Float",
-            "double" to "kotlin.Double",
-            "float64" to "kotlin.Double",
             "number+float64" to "kotlin.Double",
             "number+integer" to "kotlin.Int",
             "number+int64" to "kotlin.Long",
