@@ -25,6 +25,7 @@ webjars-htmx = { module = "org.webjars.npm:htmx.org", version.ref = "htmx" }
 
 # OpenAPI Gen dependencies
 swagger-annotations = { module = "io.swagger.core.v3:swagger-annotations", version = "2.2.27" }
+swagger-models = { module = "io.swagger.core.v3:swagger-models", version = "2.2.27" }
 springfox-swagger2 = { module = "io.springfox:springfox-swagger2", version = "3.0.0" }
 
 [plugins]

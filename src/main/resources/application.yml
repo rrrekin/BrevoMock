@@ -1,0 +1,36 @@
+---
+brevo:
+  issues:
+    Account: 4
+    Balance: 5
+    Companies: 6
+    Contacts: 7
+    Conversations: 8
+    Coupons: 9
+    Custom Objects: 10
+    Deals: 11
+    Domains: 12
+    Ecommerce: 13
+    Email Campaigns: 14
+    Event: 15
+    External Feeds: 16
+    Files: 17
+    Inbound Parsing: 18
+    Master account: 19
+    Notes: 20
+    Payments: 21
+    Process: 22
+    Program: 23
+    Reward: 24
+    SMS Campaigns: 25
+    SMS Templates: 26
+    Senders: 27
+    Tasks: 28
+    Tier: 29
+    Transactional SMS: 30
+    Transactional WhatsApp: 31
+    Transactional emails: 32
+    User: 33
+    Webhooks: 34
+    WhatsApp Campaigns: 35
+    companies: 36
