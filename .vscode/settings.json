@@ -1,0 +1,7 @@
+{
+    "kotlin.compiler.jvmTarget": "21",
+    "kotlin.java.versionWarning": false,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "gradle.autoDetect": "on",
+    "java.compile.nullAnalysis.mode": "automatic"
+}
